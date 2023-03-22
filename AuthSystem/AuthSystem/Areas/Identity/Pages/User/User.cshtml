@@ -1,0 +1,25 @@
+﻿@page "/admin/menber"
+@model AuthSystem.Areas.Identity.Pages.User.UserModel
+@{
+    ViewData["Title"] = "Danh sách các thành viên";
+}
+<h2>@ViewData["Title"]</h2>
+<partial name="_StatusMessage" model="@Model.StatusMessage"></partial>
+<table class="table">
+    <tr>
+        <th>Tên user</th>
+        <th>Vai trò của user</th>
+        <th>Tác vị </th>
+    </tr>
+    @foreach (var user in Model.users)
+   {
+       <tr>
+           <td>@user.UserName</td>           
+           <td></td>
+           <td>
+               <a class="btn btn-success btn-sm" asp-page="./AddRole" asp-route-id="@user.Id">Cập nhật</a>
+           </td>
+       </tr>
+   }
+
+</table>

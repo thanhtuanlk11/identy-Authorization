@@ -1,0 +1,18 @@
+﻿@using AuthSystem.DTO
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model HomeDTO;
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+<div class="card-body">
+    <a class="nav-link text-dark">Gmail : @Model.UserName</a>
+     <a class="nav-link text-dark">Full Name : @Model.FirtName  @Model.LastName</a>
+       <a class="nav-link text-dark">Address : @Model.Address</a>
+      <a class="nav-link text-dark">Phone : @Model.SDT</a>
+     
+</div>
